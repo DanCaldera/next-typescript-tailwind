@@ -2,4 +2,4 @@
 
 This project was made to be destroyed
 
-Nextjs, Typescript, tailwindcss and MaterialUI boilerplate
+Nextjs, Typescript, tailwindcss, MaterialUI and sequelize/mongoose boilerplate
