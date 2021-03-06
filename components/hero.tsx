@@ -1,7 +1,7 @@
-import { FunctionComponent } from 'react'
+import Link from 'next/link'
 import React from 'react'
 
-const Hero: FunctionComponent = () => {
+const Hero: React.FunctionComponent = () => {
   const [showMenu, setShowMenu] = React.useState(false)
 
   return (
@@ -109,12 +109,11 @@ const Hero: FunctionComponent = () => {
             </div>
           </div>
           <div className="hidden md:flex">
-            <a
-              href="#"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
-            >
-              Log in
-            </a>
+            <Link href="/login">
+              <a className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700">
+                Log in
+              </a>
+            </Link>
           </div>
         </nav>
 
