@@ -192,12 +192,11 @@ const Hero: React.FunctionComponent = () => {
                   Company
                 </a>
               </div>
-              <a
-                href="#"
-                className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100"
-              >
-                Log in
-              </a>
+              <Link href="/login">
+                <a className="block w-full px-5 py-3 text-center font-medium text-indigo-600 bg-gray-50 hover:bg-gray-100">
+                  Log in
+                </a>
+              </Link>
             </div>
           </div>
         )}
@@ -412,6 +411,13 @@ const Hero: React.FunctionComponent = () => {
                           >
                             Create your account
                           </button>
+                        </div>
+                        <div className="flex justify-center text-sm">
+                          <Link href="/login">
+                            <a className="font-medium text-indigo-600 hover:text-indigo-500">
+                              Already have an account?
+                            </a>
+                          </Link>
                         </div>
                       </form>
                     </div>
