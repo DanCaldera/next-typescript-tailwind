@@ -29,7 +29,7 @@ const Alert = ({ preview }: Props) => {
             </>
           ) : (
             <>
-              The source code for this admin dashboard is{' '}
+              The source code for this project is{' '}
               <a
                 href={`https://github.com/DanCaldera/${EXAMPLE_PATH}`}
                 className="underline hover:text-success duration-200 transition-colors"
