@@ -1,5 +1,10 @@
 module.exports = {
   purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  plugins: [
+    // ...
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+  ],
   theme: {
     extend: {
       colors: {
