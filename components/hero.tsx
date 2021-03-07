@@ -1,8 +1,28 @@
 import Link from 'next/link'
 import React from 'react'
+import { createClient } from '@supabase/supabase-js'
+import { SUPABASE_URL, SUPABASE_KEY } from '../lib/constants'
 
 const Hero: React.FunctionComponent = () => {
   const [showMenu, setShowMenu] = React.useState(false)
+
+  const [name, setName] = React.useState('')
+  const [identifier, setIdentifier] = React.useState('')
+  const [password, setPassword] = React.useState('')
+
+  const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+
+  const _handleSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
+    console.log(name, identifier, password)
+    let { user, error } = await supabase.auth.signUp({
+      email: identifier,
+      password: password,
+    })
+
+    console.log(user)
+    console.log(error)
+  }
 
   return (
     <div className="relative bg-gray-800 overflow-hidden">
@@ -358,7 +378,7 @@ const Hero: React.FunctionComponent = () => {
                     </div>
 
                     <div className="mt-6">
-                      <form action="#" method="POST" className="space-y-6">
+                      <form className="space-y-6" onSubmit={_handleSubmit}>
                         <div>
                           <label htmlFor="name" className="sr-only">
                             Full name
@@ -371,6 +391,7 @@ const Hero: React.FunctionComponent = () => {
                             placeholder="Full name"
                             required
                             className="block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
+                            onChange={(e) => setName(e.target.value)}
                           />
                         </div>
 
@@ -386,6 +407,7 @@ const Hero: React.FunctionComponent = () => {
                             placeholder="Mobile number or email"
                             required
                             className="block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
+                            onChange={(e) => setIdentifier(e.target.value)}
                           />
                         </div>
 
@@ -401,6 +423,7 @@ const Hero: React.FunctionComponent = () => {
                             autoComplete="current-password"
                             required
                             className="block w-full shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm border-gray-300 rounded-md"
+                            onChange={(e) => setPassword(e.target.value)}
                           />
                         </div>
 

@@ -11,6 +11,7 @@
     "post-update": "yarn upgrade --latest"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.5.0",
     "classnames": "^2.2.6",
     "date-fns": "^2.19.0",
     "gray-matter": "^4.0.2",
