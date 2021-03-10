@@ -1,4 +1,4 @@
-# ppcdsalvc template
+# next-typescript-tailwind template
 
 This project was made to be destroyed
 
